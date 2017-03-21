@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Main后台管理</title>
+    <link rel="stylesheet" href="../lib/jQuery-easyUI/themes/default/easyui.css"/>
+    <link rel="stylesheet" href="../lib/jQuery-easyUI/themes/icon.css"/>
+    <script src="../lib/jQuery-easyUI/jquery.min.js"></script>
+    <script src="../lib/jQuery-easyUI/jquery.easyui.min.js"></script>
+    <script src="../lib/jQuery-easyUI/locale/easyui-lang-zh_CN.js"></script>
+</head>
+<body>
+    <div class="easyui-layout" fit="true">
+        <div region="north" height="30" padding-left="10px" padding-top="2px" border="false">
+            <a href="javascript:void(0)" class="easyui-linkbutton" title="小说后台管理系统" iconCls="icon-admin" plain="true">管理员系统</a>
+        </div>
+        <div region="west" width="200" title="菜单栏" iconCls="icon-" split="true" resizable="false">
+            <div class="easyui-accordion" fit="true" border="false">
+                <div title="控制面板" iconCls="icon-ok"></div>
+                <div title="小说管理"  iconCls="icon-ok" selected="true" style="padding: 15px">
+                    <a href="javascript:void(0)" class="easyui-linkbutton" selected="true" iconCls="icon-edit" plain="true" style="outline:none">小说管理</a>
+                </div>
+            </div>
+        </div>
+        <div region="center">
+            <div class="easyui-tabs" fit="true" >
+                <div title="关于我们" style="padding: 5px"> 版权：1101A</div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

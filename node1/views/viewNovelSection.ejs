@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8"/>
+    <title><%=novel.name%>-<%=novel.sections[index].name%></title>
+    <link rel="stylesheet" href="/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/lib/jQuery-easyUI/jquery.min.js"></script>
+    <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #e9faff">
+<%include head.ejs%>
+<div style="padding: 10px;text-align: center"><h1><%=novel.sections[index].name%></h1></div>
+<%include changePage.ejs%>
+<div style="padding: 10px 100px ;font-size:26px;font-family: '楷体'"><%-content%></div>
+<%include changePage.ejs%>
+<%include footer.ejs%>
+</body>
+</html>

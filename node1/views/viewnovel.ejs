@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8"/>
+    <title><%=data.name%></title>
+    <link rel="stylesheet" href="/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/lib/jQuery-easyUI/jquery.min.js"></script>
+    <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #e9faff">
+<%include head.ejs%>
+<div class="panel panel-default" style="background-color:#e9faff;width:60%;margin:0 auto">
+    <div class="panel-heading" style="text-align: center;background-color:#337AB7;color: #ffffff">
+        <h1 class="panel-title" style="height:30px;line-height:30px">
+            <p><%=data.name%></p>
+        </h1>
+    </div>
+    <div class="panel-body" style="text-align: center;padding:20px 50px">
+        <div style="float:left;width:180px;height:240px;margin-right:25px">
+            <img src="<%=data.imgUrl%>" width="180" height="240px"/>
+        </div>
+        <div style="float: left;width:70%;height: 240px;position:relative">
+            <h5 style="float: left;margin-left:20px">类别：<%=data.category%></h5>
+            <h5 style="float: right">作者：<%=data.author%></h5>
+            <br/><br/>
+            <div style="height: 100px;overflow:hidden;">小说简介：<%=data.description%></div>
+            <br/>
+            <p style="float:left">最后更新时间:<%=data.lastUpdateTime.toLocaleString()%></p>
+
+            <div style="position:absolute;bottom:10px;left:30%">
+                <a class="btn btn-primary" type="button">加入书架</a>
+                <a class="btn btn-default" type="button">开始阅读</a>
+            </div>
+        </div>
+    </div>
+</div>
+<a class="list-group-item active" style="width:60%;margin:10px auto">
+    章节目录
+</a>
+<div style="width:60%;margin:10px auto;padding:10px">
+    <% for(var item of data.sections){%>
+    <div class="col-md-12 col-sm-6 col-lg-4" style="margin: 8px 0">
+        <a href="/viewNovelSection?id=<%=data._id%>&index=<%=item.index%>"><%=item.name%></a>
+    </div>
+    <%}%>
+</div>
+<%include footer.ejs%>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html style="border-bottom: 1px solid #ccc">
+<head lang="en">
+    <meta charset="utf-8"/>
+    <title>免费小说-《</title>
+    <link rel="stylesheet" href="/lib/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="/lib/jQuery-easyUI/jquery.min.js"></script>
+    <script src="/lib/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #e9faff">
+<%include head.ejs%>
+<%include pages.ejs%>
+<div>
+    <%for(var item of rows){%>
+    <div class="col-sm-6 col-md-3 col-lg-3" style="width:317px;height: 200px;margin: 7px;overflow: hidden;">
+        <div style="float: left;width: 120px;height: 160px;margin-right: 25px;">
+            <img width="130" src="<%=item.imgUrl%>" height="200"/>
+        </div>
+        <div style="float: left;width: 138px;height: 160px;">
+            <div style="width: 100%;height: 163px;overflow: hidden;">
+                <a><%=item.name%></a><br/>
+                <a style="float:right;"><%=item.author%></a><br/>
+                <div style="height: 143px;width: 100%"><%=item.description%></div>
+            </div>
+            <p class="btn-group">
+                <a href="/viewnovel?id=<%=item._id%>" class="btn btn-primary" role="button">
+                    查看章节
+                </a>
+                <a href="/viewnovel?id=<%=item._id%>" class="btn btn-default" role="button">
+                    阅读
+                </a>
+            </p>
+
+        </div>
+    </div>
+    <%}%>
+</div>
+<% include footer.ejs %>
+</body>
+</html>

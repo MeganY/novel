@@ -1,0 +1,58 @@
+<div class="text-center">
+    <div class="btn-group">
+        <%if(page > 1){%>
+        <a href="/?category=<%=category%>&searchTxt=<%=searchTxt%>&page=1" class="btn btn-primary">
+            <span class="glyphicon glyphicon-fast-backward"></span>
+            首页
+        </a>
+        <a href="/?category=<%=category%>&searchTxt=<%=searchTxt%>&page=<%=page-1%>" class="btn btn-primary">
+            <span class="glyphicon glyphicon-arrow-left"></span>
+            上一页
+        </a>
+        <%}%>
+        <%if(maxPage >= 5){%>
+        <div id='_current' style="float:left;margin:0px 10px;">
+            <%if( page < maxPage-1 && page>2){%>
+            <%for(var i = page-2;i<page+3;i++){%>
+            <a href="/?category=<%=category%>&searchTxt=<%=searchTxt%>&page=<%=i%>" class="btn btn-default"><%=i%></a>
+            <%}%>
+            <%}else if(page < 3){%>
+            <%for(var i = 1;i <= 5;i++){%>
+            <a href="/?category=<%=category%>&searchTxt=<%=searchTxt%>&page=<%=i%>" class="btn btn-default"><%=i%></a>
+            <%}%>
+            <%}else if(page > maxPage-2){%>
+            <%for(var i = maxPage-4;i <= maxPage;i++){%>
+            <a href="/?category=<%=category%>&searchTxt=<%=searchTxt%>&page=<%=i%>" class="btn btn-default"><%=i%></a>
+            <%}%>
+            <%}%>
+            <form id="form_pageNum" class="navbar-form" action="/" method="get" role="search">
+                <div class="input-group">
+                    <input name="page" type="text" placeholder="<%=page%>/<%=maxPage%>页" class="form-control" style="width:76px">
+                    <span id="btn_pageNum" class="input-group-addon" onclick="$('#form_pageNum').submit();" style="cursor:pointer;">跳转</span>
+                </div>
+            </form>
+        </div>
+        <%}%>
+        <%if(maxPage < 5){%>
+            <%for(var i = 1;i<= maxPage;i++){%>
+                <a href="/?category=<%=category%>&searchTxt=<%=searchTxt%>&page=<%=i%>" class="btn btn-default"><%=i%></a>
+            <%}%>
+            <form id="form_pageNum" class="navbar-form" action="/" method="get" role="search" style="float:left;margin-top:0px">
+                <div class="input-group">
+                    <input name="page" type="text" placeholder="<%=page%>/<%=maxPage%>页" class="form-control" style="width:76px">
+                    <span id="btn_pageNum" class="input-group-addon" onclick="$('#form_pageNum').submit();" style="cursor:pointer;">跳转</span>
+                </div>
+            </form>
+        <%}%>
+        <%if(isNextPage){%>
+        <a href="/?category=<%=category%>&searchTxt=<%=searchTxt%>&page=<%=page+1%>" class="btn btn-primary">
+            <span class="glyphicon glyphicon-arrow-right"></span>
+            下一页
+        </a>
+        <a href="/?category=<%=category%>&searchTxt=<%=searchTxt%>&page=<%=maxPage%>" class="btn btn-primary">
+            <span class="glyphicon glyphicon-fast-forward"></span>
+            尾页
+        </a>
+        <%}%>
+    </div>
+</div>
